@@ -1,7 +1,7 @@
 <div class="trm-content-start">
 
     <!-- banner -->
-    <%- partial('./_partial/banner',  {
+    <%- partial('./_partial/banner', {
         ...theme.banner.default,
         bannerTitle: page.title,
         bannerText: 'NEWS LETTER'
@@ -19,21 +19,28 @@
                 <!-- content -->
                 <div class="trm-content" id="trm-content">
                     <div data-scroll data-scroll-repeat data-scroll-offset="500" id="about-triger"></div>
-                    
+
                     <div class="row">
                         <div class="col-lg-4">
-                            <div class="trm-card trm-label trm-label-light text-center"><i class="far fa-calendar-alt trm-icon"></i><br>
-                                <%= date(page.date,'MM/DD') %>
+                            <div class="trm-card trm-label trm-label-light text-center"><i
+                                        class="far fa-calendar-alt trm-icon"></i><br>
+                                <%= date(page.date, 'MM/DD') %>
                             </div>
                         </div>
                         <div class="col-lg-4">
-                            <div class="trm-card trm-label trm-label-light text-center"><i class="far fa-clock trm-icon"></i><br>
-                                <%= date(page.date,'hh:mm') %>
+                            <div class="trm-card trm-label trm-label-light text-center"><i
+                                        class="far fa-clock trm-icon"></i><br>
+                                <%= date(page.date, 'hh:mm') %>
                             </div>
                         </div>
                         <div class="col-lg-4">
-                            <div class="trm-card trm-label trm-label-light text-center"><i class="far fa-user trm-icon"></i><br>
-                                <%= theme.user.name %>
+                            <div class="trm-card trm-label trm-label-light text-center"><i
+                                        class="far fa-user trm-icon"></i><br>
+                                <% if (!theme.article.author) { %>
+                                    <%= theme.user.name %>
+                                <% } else { %>
+                                    <%= page.author %>
+                                <% } %>
                             </div>
                         </div>
                     </div>
@@ -43,24 +50,26 @@
                     </article>
 
                     <!-- blog -->
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <!-- title -->
-                            <h5 class="trm-mb-40 trm-title-with-divider">
-                                <%- __('title.other_articles') %>
-                                <span data-number="02"></span>
-                            </h5>
+                    <% if (theme.article.other) { %>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                title
+                                <h5 class="trm-mb-40 trm-title-with-divider">
+                                    <%- __('title.other_articles') %>
+                                    <span data-number="02"></span>
+                                </h5>
+                            </div>
+                            <% if(page.prev){ %>
+                                <%- partial('./_partial/post-card', {post: page.prev}) %>
+                            <% } %>
+                            <% if(page.next){ %>
+                                <%- partial('./_partial/post-card', {post: page.next}) %>
+                            <% } %>
                         </div>
-                        <% if(page.prev){ %>
-                            <%- partial('./_partial/post-card',{ post: page.prev }) %>
-                        <%}%>
-                        <% if(page.next){ %>
-                            <%- partial('./_partial/post-card',{ post: page.next }) %>
-                        <%}%>
-                    </div>
+                    <% } %>
                     <!-- blog end -->
 
-                    <%- partial('./_partial/comment',{ titleHide: false }) %>
+                    <%- partial('./_partial/comment', {titleHide: false}) %>
 
                     <div class="trm-divider trm-mb-40"></div>
 
@@ -76,9 +85,10 @@
 
 <% if(is_post()){ %>
     <% if(theme.is_toc){ %>
-      <div id="post-toc" data-scroll data-scroll-repeat data-scroll-sticky data-scroll-target="#content" class="post-toc single">
-          <%- toc(page.content) %>
-      </div>
+        <div id="post-toc" data-scroll data-scroll-repeat data-scroll-sticky data-scroll-target="#content"
+             class="post-toc single">
+            <%- toc(page.content) %>
+        </div>
     <% } %>
-  <% } %>
+<% } %>
   

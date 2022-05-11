@@ -126,4 +126,7 @@ links:
     image: //www.imalun.com/images/avatar.jpg # 头像
     desc: 醒，亦在人间；梦，亦在人间 # 描述
 
-# TODO 博客页面源码修改：删除other articles
+article:
+  other: false
+  author: true
+
