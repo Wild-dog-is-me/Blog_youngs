@@ -7,13 +7,13 @@ title: 实干青年
 subtitle: ''
 description: '实干青年'
 keywords:
-author: John Doe
-language: en
+author: 实干青年工作室
+language: zh-CN
 timezone: ''
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: http://youngs.code-farmer.cloud/
+url: https://youngs.code-farmer.cloud/
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
@@ -97,7 +97,7 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: volantis
+theme: async
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment

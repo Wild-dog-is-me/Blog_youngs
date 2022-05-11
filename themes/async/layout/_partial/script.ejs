@@ -1,0 +1,42 @@
+<%- js([
+    'js/plugins/jquery.min',
+    'js/plugins/swup.min.js',
+    'js/plugins/locomotive-scroll.js',
+    'js/plugins/typing.js',
+    'js/plugins/fancybox.min.js',
+    'js/plugins/swiper.min.js'
+]) %>
+
+<!-- 评论插件 -->
+<% if(theme.comment && theme.comment.enable) {%> 
+    <% if(theme.comment.bComments.env){ %>
+        <script type="text/javascript" src="//imgcache.qq.com/qcloud/cloudbase-js-sdk/1.7.1/cloudbase.full.js"></script>
+        <script type="text/javascript" src="//unpkg.com/b-comments@<%= theme.comment.bComments.v %>/dist/index.all.min.js"></script>
+    <% } else if (theme.comment.twikoo.envId){ %>
+        <script type="text/javascript" src="//cdn.jsdelivr.net/npm/twikoo@1.5.3/dist/twikoo.all.min.js"></script>
+        <script>
+            twikoo.init({
+                el: '#tcomment', 
+                envId: '<%-theme.comment.twikoo.envId%>',
+                region: '<%-theme.comment.twikoo.region%>', 
+                path: '<%-theme.comment.twikoo.path%>', 
+              
+            })
+        </script>
+    <% } %>
+<% } %>
+
+<!-- Service Worker -->
+<% if(theme.sw){ %>
+    <script>
+        "serviceWorker" in navigator ? navigator.serviceWorker.register('/sw.js').then(function () {
+            navigator.serviceWorker.controller ? 
+             console.log("Assets cached by the controlling service worker.") :
+             console.log("Please reload this page to allow the service worker to handle network operations.")
+        }).catch(function (e) {
+            console.log("ERROR: " + e)
+        }) : console.log("Service workers are not supported in the current browser.")
+    </script>
+<% } %>
+
+<script src="<%= url_for('js/main.js') %>?v=<%= theme.version %>"></script>

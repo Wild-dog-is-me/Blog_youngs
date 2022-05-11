@@ -1,0 +1,129 @@
+version: 1.0.2
+
+# user
+user:
+  name: 实干青年
+  first_name: 实干
+  last_name: 青年
+  logo: /static/img/website/logo.jpg
+  email: # TODO 需要添加邮箱
+  domain: youngs.code-farmer.cloud
+  avatar: /static/img/website/logo.jpg
+  describe: 实干青年工作室的官方博客。
+  ruleText: 友链主要来自于实干青年工作室历届核心成员的博客或Github。<br>如果您是实干青年的朋友，可以申请添加友链。
+  birthDay: 04/10/2022 17:00:00 # TODO 需要修改计时开始时间
+  copyrightYear: 2021
+
+# logo
+favicon:
+  icon16:
+  icon32:
+  appleTouchIcon:
+  webmanifest:
+  visibilitychange: false
+  hidden: 
+  showText: (/≧▽≦/)咦！又好了！
+  hideText: (●—●)喔哟，崩溃啦！
+
+# menu
+top_bars:
+    - title: 首页
+      url: /
+    - title: 归档
+      url: /archives/
+    - title: 友链
+      url: /links/
+    - title: 关于
+      url: /about/
+
+# banner 配置信息
+banner:
+  default:
+    type: img
+    bgurl: https://pic1.zhimg.com/v2-b3c2c6745b9421a13a3c4706b19223b3_r.jpg?source=1940ef5c
+    bannerText: Hi my new friend!
+  index:
+    type: img
+    bgurl: https://pic1.zhimg.com/v2-b3c2c6745b9421a13a3c4706b19223b3_r.jpg?source=1940ef5c
+    bannerTitle: 空谈误国，<br>实干兴邦。
+    bannerText: Hi my new friend!
+    videoUrl: 
+  archive: # TODO archive处需要修改
+    type: img
+    bgurl: https://w.wallhaven.cc/full/j5/wallhaven-j5we85.jpg
+    bannerTitle: 云间连下榻，<br>天上接行杯。
+    bannerText: The article archive
+  links: # TODO 需要修改编译源码，去除 Site Information
+    type: img
+    bgurl: https://images.unsplash.com/photo-1563718428108-a2420c356c5c
+    bannerTitle: 莺出求同志，<br>鸿归学共胞。
+    bannerText: A link to a friend's website
+  comment:
+    type: img
+    bgurl: https://images.unsplash.com/photo-1621266309424-52f5a2e6d7f6
+    bannerTitle: 醉后不知天在水，<br>满船清梦压星河。
+    bannerText: The magic tree hole
+  about:
+    type: img
+    bgurl: https://images.unsplash.com/photo-1637118560941-b2363dcd8a8e?crop=entropy&cs=srgb&fm=jpg&ixid=Mnw4OTgyNHwwfDF8c2VhcmNofDE0fHwlRTYlOTclQTUlRTUlODclQkF8ZW58MHx8fHwxNjQ5NjcwODgz&ixlib=rb-1.2.1&q=85
+    bannerTitle: 醉后不知天在水，<br>满船清梦压星河。
+    bannerText: About me
+
+# sidebar
+sidebar:
+  typedTextPrefix: We Are
+  typedText: [ 'Capable Youngs !' ]
+  info: 
+#    - key: sidebar.residence
+#      val: Mars
+    - key: city
+      val: XuZhou jiangsu
+    - key: college
+      val: JSNU KWXY
+  social:
+    - icon: fab fa-github
+      url: https://github.com
+    - icon: iconfont cg-gitee
+      url: https://gitee.com
+    - icon: iconfont cg-weibo
+      url: https://weibo.com/
+
+# about
+about:
+  title: 如果一切都是镜花水月，那就让这万物走向终结。如果一切皆是命中注定，那就让这世界消失殆尽。
+  introduction: 大家好，我是 <strong>Async</strong>，很高兴您能在浩瀚如烟的互联网世界里发现这个博客，更感谢您能够饶有兴致地浏览这个页面。建立这个 Blog 是出于兴趣爱好，我将在此分会分享一些学习笔记，可能还会分享少许图片、视频以及其他有趣东西的链接。
+  blog: 
+    <ul class="trm-list">
+      <li>程序：Hexo </li>
+      <li>主题：Hexo-theme-async </li>
+    </ul>
+  privacy: 
+    本网站不会追踪访客行为，且不要求访客提供任何敏感信息（比如真实姓名、身份证号码、手机号等），因而也不存在任何隐私泄漏问题。访客参与评论，必须遵守法律法规和基本道德规范，文明礼貌。严禁发布任何有关淫秽、反动、暴力、博彩、恐吓、低俗的内容或违法信息，在尊重言论自由的同时请保持和平与理性。请勿对他人采取不友好的评论或其它过激行为。
+
+# Page Visit Statistics
+webAnalytics:  
+  enable: false 
+  baidu:   # Baidu key
+  google:  # Tracking ID for Google statistics
+  tencent: # Tencent statistics
+    sid:
+    cid:
+
+# comment
+comment:
+  enable: false
+  bComments:
+    v: 0.0.12
+    env: 
+
+# Service Worker
+sw: false
+
+# 友链
+links:
+  - name: 白云苍狗 # 名称
+    url: //www.imalun.com/ # 地址
+    image: //www.imalun.com/images/avatar.jpg # 头像
+    desc: 醒，亦在人间；梦，亦在人间 # 描述
+
+# TODO 博客页面源码修改：删除other articles
