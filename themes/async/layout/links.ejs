@@ -61,7 +61,7 @@
                         <% } %>
 
                         <% page.links.forEach(item=>{ %>
-                            <div class="col-lg-6">
+                            <div class="col-lg-6" data-toggle="tooltip" title='<%- item.author %>'>
                                 <a href='<%- item.url %>' target='_blank' rel="nofollow">
                                     <div class="trm-service-icon-box trm-scroll-animation trm-p-20" data-scroll
                                          data-scroll-offset="40">
