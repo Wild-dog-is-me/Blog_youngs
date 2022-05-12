@@ -21,19 +21,19 @@
                     <div data-scroll data-scroll-repeat data-scroll-offset="500" id="about-triger"></div>
 
                     <div class="row">
-                        <div class="col-lg-4">
+                        <div class="col-lg-4" style="max-width: calc(100%/3)!important;">
                             <div class="trm-card trm-label trm-label-light text-center"><i
                                         class="far fa-calendar-alt trm-icon"></i><br>
                                 <%= date(page.date, 'MM/DD') %>
                             </div>
                         </div>
-                        <div class="col-lg-4">
+                        <div class="col-lg-4" style="max-width: calc(100%/3)!important;">
                             <div class="trm-card trm-label trm-label-light text-center"><i
                                         class="far fa-clock trm-icon"></i><br>
                                 <%= date(page.date, 'hh:mm') %>
                             </div>
                         </div>
-                        <div class="col-lg-4">
+                        <div class="col-lg-4" style="max-width: calc(100%/3)!important;">
                             <div class="trm-card trm-label trm-label-light text-center"><i
                                         class="far fa-user trm-icon"></i><br>
                                 <% if (!theme.article.author) { %>
