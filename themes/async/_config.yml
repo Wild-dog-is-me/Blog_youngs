@@ -53,8 +53,9 @@ banner:
     bgurl: https://w.wallhaven.cc/full/j5/wallhaven-j5we85.jpg
     bannerTitle: 云间连下榻，<br>天上接行杯。
     bannerText: The article archive
-  links: # TODO 需要修改编译源码，去除 Site Information
+  links: #
     type: img
+    siteInformation: false
     bgurl: https://images.unsplash.com/photo-1563718428108-a2420c356c5c
     bannerTitle: 莺出求同志，<br>鸿归学共胞。
     bannerText: A link to a friend's website
@@ -118,13 +119,6 @@ comment:
 
 # Service Worker
 sw: false
-
-# 友链
-links:
-  - name: 白云苍狗 # 名称
-    url: //www.imalun.com/ # 地址
-    image: //www.imalun.com/images/avatar.jpg # 头像
-    desc: 醒，亦在人间；梦，亦在人间 # 描述
 
 article:
   other: false

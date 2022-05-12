@@ -1,11 +1,10 @@
-
 <div class="trm-content-start">
 
     <!-- banner -->
-    <%- partial('./_partial/banner',  {
+    <%- partial('./_partial/banner', {
         ...theme.banner.default,
         bannerTitle: page.title,
-        ...theme.banner.links 
+        ...theme.banner.links
     }) %>
     <!-- banner end -->
 
@@ -24,57 +23,64 @@
                     <div class="row trm-mb-40">
                         <div class="col-lg-12">
                             <blockquote class="trm-scroll-animation" data-scroll data-scroll-offset="40">
-                                <%-__('site.ruleText')%>：
-                                <br>
+                                <!--                                <%- __('site.ruleText') %>：-->
+                                <!--                                <br>-->
                                 <%- theme.user.ruleText %>
                             </blockquote>
                         </div>
                     </div>
 
-                    <div class="row trm-mb-20">
-                        <div class="col-lg-12">
-                            <h5 class="trm-mb-40 trm-title-with-divider"><%-__('site.title')%><span data-number="01"></span></h5>
-                        </div>
-                        <div class="col-lg-12">
-                            <div class="trm-service-icon-box trm-scroll-animation trm-active-el" data-scroll="" data-scroll-offset="40">
-                                <ul class="trm-list">
-                                    <li><%-__('site.webmaster')%>：<%- theme.user.name %></li>
-                                    <li><%-__('site.domain')%>：<%- theme.user.domain %></li>
-                                    <li><%-__('site.avatar')%>：<%- theme.user.avatar %></li>
-                                    <li><%-__('site.describe')%>：<%- theme.user.describe %></li>
-                                </ul>
+                    <% if (theme.banner.links.siteInformation) { %>
+                        <div class="row trm-mb-20">
+                            <div class="col-lg-12">
+                                <h5 class="trm-mb-40 trm-title-with-divider"><%- __('site.title') %><span
+                                            data-number="01"></span></h5>
                             </div>
-                        </div>    
-                    </div>
+                            <div class="col-lg-12">
+                                <div class="trm-service-icon-box trm-scroll-animation trm-active-el" data-scroll=""
+                                     data-scroll-offset="40">
+                                    <ul class="trm-list">
+                                        <li><%- __('site.webmaster') %>：<%- theme.user.name %></li>
+                                        <li><%- __('site.domain') %>：<%- theme.user.domain %></li>
+                                        <li><%- __('site.avatar') %>：<%- theme.user.avatar %></li>
+                                        <li><%- __('site.describe') %>：<%- theme.user.describe %></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    <% } %>
 
                     <div class="row trm-mb-20">
-                        <div class="col-lg-12">
-                            <h5 class="trm-mb-40 trm-title-with-divider">
-                                <%-__('title.links')%>
-                                <span data-number="02"></span>
-                            </h5>
-                        </div>
+                        <% if (theme.banner.links.siteInformation) { %>
+                            <div class="col-lg-12">
+                                <h5 class="trm-mb-40 trm-title-with-divider">
+                                    <%- __('title.links') %>
+                                    <span data-number="02"></span>
+                                </h5>
+                            </div>
+                        <% } %>
 
-                        <% theme.links.forEach(item=>{%>
+                        <% page.links.forEach(item=>{ %>
                             <div class="col-lg-6">
                                 <a href='<%- item.url %>' target='_blank' rel="nofollow">
-                                    <div class="trm-service-icon-box trm-scroll-animation trm-p-20" data-scroll data-scroll-offset="40">
+                                    <div class="trm-service-icon-box trm-scroll-animation trm-p-20" data-scroll
+                                         data-scroll-offset="40">
                                         <div class="trm-service-content">
                                             <div class="trm-icon">
                                                 <img draggable="false" alt="<%- item.name %>" src="<%- item.image %>">
                                             </div>
                                             <div class="trm-service-text">
                                                 <h6 class="trm-mb-10"><%- item.name %></h6>
-                                                <div><%- truncate(item.desc,{length:32}) %></div>
+                                                <div><%- truncate(item.desc, {length: 32}) %></div>
                                             </div>
                                         </div>
                                     </div>
                                 </a>
                             </div>
-                        <%})%>
+                        <% }) %>
                     </div>
 
-                    <%- partial('./_partial/comment',{ titleHide: false }) %>
+                    <%- partial('./_partial/comment', {titleHide: false}) %>
 
                     <div class="trm-divider trm-mb-40"></div>
 
